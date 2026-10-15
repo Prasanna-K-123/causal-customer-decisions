@@ -15,3 +15,5 @@ Maintainer cross-check: scikit-uplift's documented loader provides an HTTPS mirr
 https://www.uplift-modeling.com/en/latest/_modules/sklift/datasets/datasets.html#fetch_hillstrom
 
 No demographic gender is present: `mens` and `womens` indicate prior purchase categories. Do not relabel them gender.
+
+The maintained HTTPS gzip matched its published MD5 `a68a81291f53a14f4e29002629803ba3`; parsed cells were compared with the original CSV and matched exactly. The loader prefers that HTTPS mirror for new downloads. Binary, numeric-range, treatment-level and outcome-consistency checks passed; all 64,000 rows are retained. The data audit records independent split sizes and row-position hashes.

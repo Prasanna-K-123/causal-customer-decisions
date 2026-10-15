@@ -1,0 +1,57 @@
+{
+  "provider": "Kevin Hillstrom / MineThatData",
+  "source_file": "hillstrom.csv",
+  "sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece",
+  "rows": 64000,
+  "columns": [
+    "recency",
+    "history_segment",
+    "history",
+    "mens",
+    "womens",
+    "zip_code",
+    "newbie",
+    "channel",
+    "segment",
+    "visit",
+    "conversion",
+    "spend"
+  ],
+  "missing_cells": 0,
+  "arm_counts": {
+    "Womens E-Mail": 21387,
+    "Mens E-Mail": 21307,
+    "No E-Mail": 21306
+  },
+  "features": [
+    "recency",
+    "history",
+    "mens",
+    "womens",
+    "zip_code",
+    "newbie",
+    "channel"
+  ],
+  "post_treatment_excluded": [
+    "segment",
+    "visit",
+    "conversion",
+    "spend"
+  ],
+  "split": {
+    "train": {
+      "rows": 38400,
+      "sha256_row_positions": "e719823f22c907c95d7c37bf7ea09cb9682ca410b19e1057ff4bac426ec2efff"
+    },
+    "development": {
+      "rows": 12800,
+      "sha256_row_positions": "929c1df4bbfb32b734f07b957c9034e7f464eace7755cb396784bb678da6b769"
+    },
+    "test": {
+      "rows": 12800,
+      "sha256_row_positions": "d9a1851d480aef984226b3a7f4703eb30b3726d0be5fcba45d8e73c10090da88"
+    }
+  },
+  "raw_redistribution": "Excluded: no express redistribution license established",
+  "population": "Historical randomized experiment; no present-day transport claim"
+}
