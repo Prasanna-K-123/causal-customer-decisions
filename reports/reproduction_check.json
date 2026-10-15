@@ -1,0 +1,15 @@
+{
+  "date_utc": "2026-10-15",
+  "kind": "clean workspace rerun in same Python environment",
+  "python": "3.12.14",
+  "data_acquisition": "fresh checksum-verified HTTPS mirror download",
+  "aggregate_outputs_byte_identical": {
+    "results.json": true,
+    "selection.json": true,
+    "scenario_grid.csv": true,
+    "test_arm_summary.csv": true,
+    "training_balance.csv": true
+  },
+  "unit_tests_passed": 10,
+  "limits": "Same host and dependency environment; not an independent review or cross-platform replication."
+}
