@@ -1,0 +1,10 @@
+{
+  "seed": 20261015,
+  "train_fraction": 0.6,
+  "development_fraction": 0.2,
+  "primary_margin": 0.4,
+  "primary_contact_cost": 0.05,
+  "primary_capacity": 1.0,
+  "bootstrap_repetitions": 2000,
+  "data_sha256": "0e5893329d8b93cefecc571777672028290ab69865718020c78c7284f291aece"
+}

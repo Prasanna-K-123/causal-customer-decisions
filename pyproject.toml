@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-policy-lab"
+version = "0.1.0"
+description = "Auditable policy evaluation for a three-arm randomized customer experiment"
+requires-python = ">=3.12"
+dependencies = ["numpy==2.3.5", "pandas==2.2.3", "scipy==1.17.0", "scikit-learn==1.8.0", "matplotlib==3.10.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
