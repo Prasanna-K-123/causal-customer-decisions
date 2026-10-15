@@ -1,0 +1,23 @@
+feature,arm,standardized_mean_difference
+recency,Mens E-Mail,-0.006043824496433827
+recency,Womens E-Mail,0.004565523532971902
+history,Mens E-Mail,0.014420402101543687
+history,Womens E-Mail,0.010263963461292224
+mens,Mens E-Mail,-0.02282541779678952
+mens,Womens E-Mail,-0.026115132692040736
+womens,Mens E-Mail,0.020014259926208706
+womens,Womens E-Mail,0.02081456414025679
+newbie,Mens E-Mail,0.007295729984234505
+newbie,Womens E-Mail,0.01359306453493495
+zip_code_Rural,Mens E-Mail,0.014509796994709745
+zip_code_Rural,Womens E-Mail,0.003911077262458704
+zip_code_Surburban,Mens E-Mail,-0.005714776742763133
+zip_code_Surburban,Womens E-Mail,0.007565692106838713
+zip_code_Urban,Mens E-Mail,-0.004741352267719542
+zip_code_Urban,Womens E-Mail,-0.01050196748165995
+channel_Multichannel,Mens E-Mail,-0.013905611709133264
+channel_Multichannel,Womens E-Mail,-0.017720500361543486
+channel_Phone,Mens E-Mail,-0.007344463028080822
+channel_Phone,Womens E-Mail,0.009739781943871754
+channel_Web,Mens E-Mail,0.016506126067222807
+channel_Web,Womens E-Mail,0.0018982665162813838

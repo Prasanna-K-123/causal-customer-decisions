@@ -1,0 +1,127 @@
+{
+  "seed": 20261015,
+  "training_rows": 38400,
+  "development_rows": 12800,
+  "simple_policy": "all_mens",
+  "candidate_policy": "dr_learner",
+  "rule": "Highest development lower 95% bound versus no contact within simple/learned families; held-out comparison fixes both choices.",
+  "primary_scenario": {
+    "margin": 0.4,
+    "contact_cost": 0.05,
+    "capacity": 1.0
+  },
+  "development_results": {
+    "none": {
+      "scenario_value": {
+        "estimate": 0.25511513055302865,
+        "standard_error": 0.05738486109667903,
+        "lower": 0.1426428695457041,
+        "upper": 0.3675873915603532,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 12800
+      },
+      "contact_fraction": 0.0,
+      "action_counts": {
+        "No E-Mail": 12800,
+        "Mens E-Mail": 0,
+        "Womens E-Mail": 0
+      }
+    },
+    "all_mens": {
+      "scenario_value": {
+        "estimate": 0.4818643410166877,
+        "standard_error": 0.09792215443130847,
+        "lower": 0.28994044504275385,
+        "upper": 0.6737882369906215,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.22674921046365898,
+        "standard_error": 0.11350213782124877,
+        "lower": 0.004289108165709876,
+        "upper": 0.4492093127616081,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 12800,
+        "Womens E-Mail": 0
+      }
+    },
+    "all_womens": {
+      "scenario_value": {
+        "estimate": 0.44080893410796207,
+        "standard_error": 0.09796430757257421,
+        "lower": 0.24880241949531212,
+        "upper": 0.632815448720612,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.18569380355493345,
+        "standard_error": 0.11347527980322684,
+        "lower": -0.03671365799499657,
+        "upper": 0.40810126510486344,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 0,
+        "Womens E-Mail": 12800
+      }
+    },
+    "segment": {
+      "scenario_value": {
+        "estimate": 0.45548995825528926,
+        "standard_error": 0.09098953751228782,
+        "lower": 0.2771537417612489,
+        "upper": 0.6338261747493297,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.20037482770226064,
+        "standard_error": 0.10756660473313166,
+        "lower": -0.010451843513933134,
+        "upper": 0.4112014989184544,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 7008,
+        "Womens E-Mail": 5792
+      }
+    },
+    "dr_learner": {
+      "scenario_value": {
+        "estimate": 0.4688157836866969,
+        "standard_error": 0.09139003301762814,
+        "lower": 0.28969461042621936,
+        "upper": 0.6479369569471745,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.21370065313366826,
+        "standard_error": 0.10360138039213948,
+        "lower": 0.01064567881644074,
+        "upper": 0.4167556274508958,
+        "n": 12800
+      },
+      "contact_fraction": 0.948515625,
+      "action_counts": {
+        "No E-Mail": 659,
+        "Mens E-Mail": 7674,
+        "Womens E-Mail": 4467
+      }
+    }
+  },
+  "config_sha256": "080e61cfce8b135a6fd0a47a22e5e2e945fa2db4d975e984dea037ce13716647",
+  "protocol_sha256": "4aa90276b650e4486267302572b050672546526c5bafab85028c9c37cf61e526"
+}

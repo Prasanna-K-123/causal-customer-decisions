@@ -1,0 +1,203 @@
+{
+  "primary": {
+    "candidate": "dr_learner",
+    "comparator": "all_mens",
+    "scenario": {
+      "margin": 0.4,
+      "contact_cost": 0.05,
+      "capacity": 1.0
+    },
+    "paired_difference": {
+      "estimate": -0.04864597809142988,
+      "standard_error": 0.07352286262798712,
+      "lower": -0.19274814088257053,
+      "upper": 0.09545618469971079,
+      "n": 12800
+    },
+    "bootstrap": {
+      "lower": -0.20169454851170512,
+      "upper": 0.08146218216424032,
+      "repetitions": 2000,
+      "seed": 20261035,
+      "type": "paired customer percentile bootstrap; fixed trained policies"
+    },
+    "ipw_sensitivity": {
+      "estimate": -0.07467281250000002,
+      "standard_error": 0.07354386623769685,
+      "lower": -0.21881614160971707,
+      "upper": 0.06947051660971704,
+      "n": 12800
+    },
+    "evaluation_rows": 12800,
+    "superiority_supported": false,
+    "recommendation": "all_mens",
+    "recommendation_reason": "Candidate superiority not established; retain the development-selected simple policy.",
+    "inference_limits": "Fixed trained policies; customer-level sampling approximation; no present-day transport or realized profit claim."
+  },
+  "policies": {
+    "none": {
+      "scenario_value": {
+        "estimate": 0.23492250109106094,
+        "standard_error": 0.05601083202942876,
+        "lower": 0.12514328756925808,
+        "upper": 0.3447017146128638,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 12800
+      },
+      "contact_fraction": 0.0,
+      "action_counts": {
+        "No E-Mail": 12800,
+        "Mens E-Mail": 0,
+        "Womens E-Mail": 0
+      }
+    },
+    "all_mens": {
+      "scenario_value": {
+        "estimate": 0.4917182802981976,
+        "standard_error": 0.10351458794444807,
+        "lower": 0.2888334160525753,
+        "upper": 0.6946031445438199,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.2567957792071367,
+        "standard_error": 0.11771529801855316,
+        "lower": 0.026078034661373317,
+        "upper": 0.4875135237529001,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 12800,
+        "Womens E-Mail": 0
+      }
+    },
+    "all_womens": {
+      "scenario_value": {
+        "estimate": 0.367589739964625,
+        "standard_error": 0.08999828098914783,
+        "lower": 0.19119635055537942,
+        "upper": 0.5439831293738706,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.13266723887356416,
+        "standard_error": 0.10589641913347887,
+        "lower": -0.0748859287198127,
+        "upper": 0.340220406466941,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 0,
+        "Womens E-Mail": 12800
+      }
+    },
+    "segment": {
+      "scenario_value": {
+        "estimate": 0.5023594530879,
+        "standard_error": 0.10004239431087147,
+        "lower": 0.3062799633114371,
+        "upper": 0.6984389428643629,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.267436951996839,
+        "standard_error": 0.11465528213076986,
+        "lower": 0.04271672838325122,
+        "upper": 0.4921571756104267,
+        "n": 12800
+      },
+      "contact_fraction": 1.0,
+      "action_counts": {
+        "No E-Mail": 0,
+        "Mens E-Mail": 7115,
+        "Womens E-Mail": 5685
+      }
+    },
+    "dr_learner": {
+      "scenario_value": {
+        "estimate": 0.44307230220676774,
+        "standard_error": 0.0929124119942507,
+        "lower": 0.26096732098128905,
+        "upper": 0.6251772834322464,
+        "n": 12800
+      },
+      "incremental_vs_none": {
+        "estimate": 0.20814980111570677,
+        "standard_error": 0.10674120441920018,
+        "lower": -0.0010591152123532455,
+        "upper": 0.4173587174437668,
+        "n": 12800
+      },
+      "contact_fraction": 0.94890625,
+      "action_counts": {
+        "No E-Mail": 654,
+        "Mens E-Mail": 7725,
+        "Womens E-Mail": 4421
+      }
+    }
+  },
+  "intention_to_treat": [
+    {
+      "contrast": "Mens E-Mail versus No E-Mail",
+      "spend_ate": {
+        "estimate": 0.7669894480178416,
+        "standard_error": 0.2942882450463829,
+        "lower": 0.1901950866534332,
+        "upper": 1.34378380938225,
+        "n": 12800
+      },
+      "ipw_sensitivity": {
+        "estimate": 0.79935234375,
+        "standard_error": 0.2944237567748576,
+        "lower": 0.22229238427829834,
+        "upper": 1.3764123032217017,
+        "n": 12800
+      }
+    },
+    {
+      "contrast": "Womens E-Mail versus No E-Mail",
+      "spend_ate": {
+        "estimate": 0.4566680971839104,
+        "standard_error": 0.2647410478336972,
+        "lower": -0.062214821799531805,
+        "upper": 0.9755510161673526,
+        "n": 12800
+      },
+      "ipw_sensitivity": {
+        "estimate": 0.4405007812500001,
+        "standard_error": 0.26532208367823956,
+        "lower": -0.07952094706247198,
+        "upper": 0.9605225095624721,
+        "n": 12800
+      }
+    }
+  ],
+  "heavy_tail_diagnostics": {
+    "evaluation_spend_quantiles": {
+      "0.5": 0.0,
+      "0.9": 0.0,
+      "0.95": 0.0,
+      "0.99": 0.0,
+      "0.999": 215.94473000001744,
+      "1.0": 499.0
+    },
+    "zero_spend_fraction": 0.99140625
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit_learn": "1.8.0"
+  }
+}

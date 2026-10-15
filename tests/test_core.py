@@ -44,4 +44,33 @@ class CausalEvaluationTests(unittest.TestCase):
     def test_invalid_propensity_rejected(self):
         with self.assertRaises(ValueError): augmented_scores(np.zeros(2),np.zeros(2,int),np.zeros((2,3)),[0,.5,.5])
 
+
+class RobustnessTests(unittest.TestCase):
+    def test_null_effect_is_not_manufactured_by_augmentation(self):
+        rng=np.random.default_rng(23);n=60000
+        a=rng.integers(0,3,n);x=rng.normal(size=n);y=3*x+rng.normal(size=n)
+        wrong=np.column_stack([x+2,x-4,x+7])
+        score=augmented_scores(y,a,wrong)
+        contrast=summarize(score[:,1]-score[:,0])
+        self.assertLess(abs(contrast['estimate']),4*contrast['standard_error'])
+
+    def test_policy_recovers_known_heterogeneous_value(self):
+        rng=np.random.default_rng(54);n=120000
+        x=rng.choice([-1.,1.],n);a=rng.integers(0,3,n)
+        potential=np.column_stack([np.zeros(n),2*x,-x])
+        y=potential[np.arange(n),a]+rng.normal(size=n)
+        action=np.where(x>0,1,2)
+        gamma=augmented_scores(y,a,np.zeros((n,3)))
+        result=summarize(policy_scores(gamma,action))
+        truth=potential[np.arange(n),action].mean()
+        self.assertLess(abs(result['estimate']-truth),4*result['standard_error'])
+
+    def test_feature_transform_ignores_assigned_arm_and_outcomes(self):
+        import pandas as pd
+        from customer_policy.models import encoder
+        d=pd.DataFrame({'recency':[1,2,3],'history':[20,30,40],'mens':[1,0,1],'womens':[0,1,1],'newbie':[0,1,0],'zip_code':['Urban','Rural','Urban'],'channel':['Web','Phone','Web'],'segment':['No E-Mail']*3,'visit':[0,1,0],'conversion':[0,0,0],'spend':[0,0,0]})
+        e=encoder();x=e.fit_transform(d)
+        d.loc[:,'spend']=999999;d.loc[:,'segment']='Mens E-Mail';d.loc[:,'conversion']=1
+        np.testing.assert_array_equal(x,e.transform(d))
+
 if __name__=='__main__':unittest.main()

@@ -1,11 +1,47 @@
 # Causal Customer Decisions
 
-An empirical study of when customer targeting creates incremental value, using a three-arm randomized email experiment.
+**Does personalized targeting earn its complexity?** A three-arm randomized experiment, cross-fitted causal learning and an untouched evaluation set connect statistical evidence to a business decision.
 
-**Build status:** study protocol fixed; implementation in progress. No performance or profit claim has been established.
+**Finding:** the learned policy did not establish superiority over a simple campaign. Under the predefined 40% margin and $0.05 contact-cost scenario, its paired difference was **−$0.049 per customer**, 95% CI **[−$0.193, +$0.095]**. The recommendation is to retain the development-selected uniform men's email policy for this historical population and scenario. This is not a claim of realized profit or present-day campaign performance.
 
-The primary comparison will evaluate a frozen learned contact policy against a simple policy on untouched customers. Spending is observed; margin, contact cost and capacity are scenario assumptions. Historical experimental results do not establish current campaign profitability.
+| Evidence | Result |
+|---|---|
+| Original randomized experiment | 64,000 customers; three arms |
+| Training / development / evaluation | 38,400 / 12,800 / 12,800 |
+| Evaluation design | Policies frozen before final outcomes; known treatment probabilities |
+| Uncertainty | Paired confidence interval; 2,000-resample bootstrap; IPW sensitivity |
+| Integrity | Source checksums, split hashes, mathematical tests and a versioned protocol |
 
-See [the study protocol](docs/PROTOCOL.md) for the estimand, split design and decision rule, and [data provenance](docs/DATA.md) for source and redistribution boundaries.
+[Technical report](reports/TECHNICAL_REPORT.md) · [Decision memo](reports/DECISION_MEMO.md) · [Interactive scenario explorer](docs/index.html) · [Study protocol](docs/PROTOCOL.md) · [Data provenance](docs/DATA.md)
 
-Data belongs to its original provider and is not included in this repository. Code and reports will be published only with reproducible evidence and source attribution.
+![Held-out policy values](reports/policy_comparison.svg)
+
+## What is implemented
+
+- A checked download and data-audit pipeline; raw data stays outside the repository.
+- A transparent historical-purchase segment policy and a three-fold doubly robust learner with fixed model complexity.
+- Paired policy-value evaluation, known-propensity sensitivity and explicit cost/capacity assumptions.
+- An offline scenario explorer using aggregate results, with uncertainty and exploratory-analysis limits visible.
+
+The contribution is the complete evidence chain from randomized observations to a defensible operational recommendation. The underlying estimators and benchmark dataset are established; no new statistical algorithm or commercial impact is claimed.
+
+## Reproduce
+
+Python 3.12. Install the pinned environment, run tests, run the analysis and generate the reports:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+PYTHONPATH=src python -m unittest discover -s tests -v
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONPATH=src python -m customer_policy.experiment
+PYTHONPATH=src python -m customer_policy.reporting
+```
+
+Open `docs/index.html` in a browser. The explorer works offline; its report links open GitHub. The first analysis run obtains the checksum-verified public dataset; no account or API key is required. If the upstream source is unavailable, the loader stops rather than silently substituting data. Floating-point results may vary slightly across platforms.
+
+## Limits and sources
+
+The data comes from Kevin Hillstrom's MineThatData experiment. Campaign labels refer to merchandise, not observed customer gender. Margin, costs and capacity are scenarios. More than 99% of evaluation customers have zero spending, so policy differences are imprecise. No raw-data redistribution license has been established; obtain data separately under the provider's terms. Documentation cites the data creator and methodological sources.
+
+Project: Prasanna K · M.A. Actuarial Economics, Madras School of Economics.
