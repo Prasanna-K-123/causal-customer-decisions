@@ -12,7 +12,7 @@
 | Uncertainty | Paired confidence interval; 2,000-resample bootstrap; IPW sensitivity |
 | Integrity | Source checksums, split hashes, mathematical tests and a versioned protocol |
 
-[Technical report](reports/TECHNICAL_REPORT.md) · [Decision memo](reports/DECISION_MEMO.md) · [Interactive scenario explorer](docs/index.html) · [Study protocol](docs/PROTOCOL.md) · [Data provenance](docs/DATA.md)
+[Technical report](reports/TECHNICAL_REPORT.md) · [Decision memo](reports/DECISION_MEMO.md) · [Interactive scenario explorer](https://prasanna-k-123.github.io/causal-customer-decisions/) · [Study protocol](docs/PROTOCOL.md) · [Data provenance](docs/DATA.md)
 
 ![Held-out policy values](reports/policy_comparison.svg)
 
