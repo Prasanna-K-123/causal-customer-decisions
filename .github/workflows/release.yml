@@ -19,18 +19,19 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       AUDITED_REPOSITORY: Prasanna-K-123/causal-customer-decisions
       AUDITED_BASELINE: 487f00f9fa8b2ffea612172ceb0bb35e375fca9c
-      RELEASE_TAG: v1.0.1
-      RELEASE_TITLE: Causal Customer Decisions — v1.0.1
+      RELEASE_TAG: v1.0.2
+      RELEASE_TITLE: Causal Customer Decisions — v1.0.2
       RELEASE_NOTES: |
         This maintenance release aligns the source archive with the current public verification and research documentation.
-        
+
         - Adds the public test workflow and clarifies reproduction instructions and study limitations.
+        - Corrects Markdown formatting in the release verification summary.
         - Includes a guarded release workflow that checks source consistency and successful research CI before publication.
         - All 10 public scientific tests pass at the tagged commit.
         - The frozen experiment, models and reported empirical results are unchanged.
-        
+
         [Open the scenario explorer](https://prasanna-k-123.github.io/causal-customer-decisions/).
-        
+
         The original v1.0.0 release remains available. Historical experiment results and hypothetical financial scenarios do not establish present-day business profit or external validity.
     steps:
       - name: Verify the audited baseline and publish
@@ -42,7 +43,7 @@ jobs:
           import time
           import urllib.error
           import urllib.request
-          
+
           repo = os.environ["GITHUB_REPOSITORY"]
           sha = os.environ["GITHUB_SHA"]
           baseline = os.environ["AUDITED_BASELINE"]
@@ -56,7 +57,7 @@ jobs:
               "X-GitHub-Api-Version": "2022-11-28",
               "User-Agent": "audited-research-release",
           }
-          
+
           def api(path, payload=None, missing_ok=False):
               data = None if payload is None else json.dumps(payload).encode("utf-8")
               request = urllib.request.Request(api_root + path, data=data, headers=headers)
@@ -67,11 +68,11 @@ jobs:
                   if missing_ok and error.code == 404:
                       return None
                   raise RuntimeError(f"GitHub request failed: {path} (HTTP {error.code})") from None
-          
+
           def require(condition, message):
               if not condition:
                   raise RuntimeError(message)
-          
+
           def tag_commit():
               ref = api("/git/ref/tags/" + tag, missing_ok=True)
               if ref is None:
@@ -83,12 +84,12 @@ jobs:
                   require(obj["type"] == "tag", "Unexpected tag object type.")
                   obj = api("/git/tags/" + obj["sha"])["object"]
               raise RuntimeError("Tag indirection exceeds the verification limit.")
-          
+
           require(os.environ["GITHUB_REF"] == "refs/heads/main", "Release must run from main.")
           require(repo == os.environ["AUDITED_REPOSITORY"], "Unexpected repository.")
           comparison = api("/compare/" + baseline + "..." + sha)
           require(comparison["status"] == "ahead", "Audited baseline must be an ancestor.")
-          require(comparison["total_commits"] == 2, "Exactly two reviewed release-automation commits are required.")
+          require(comparison["total_commits"] == 3, "Exactly three reviewed release-automation commits are required.")
           changes = comparison["files"]
           require(
               len(changes) == 1
@@ -96,7 +97,7 @@ jobs:
               and changes[0]["status"] == "added",
               "Research files must match the audited baseline exactly.",
           )
-          
+
           deadline = time.monotonic() + 600
           while True:
               runs = api("/actions/runs?head_sha=" + sha + "&per_page=100")["workflow_runs"]
@@ -113,7 +114,7 @@ jobs:
                   break
               require(time.monotonic() < deadline, "Timed out waiting for research CI.")
               time.sleep(10)
-          
+
           require(api("/branches/main")["commit"]["sha"] == sha, "Main changed during verification.")
           existing_target = tag_commit()
           require(existing_target in (None, sha), "Existing tag points to a different commit; no retagging is allowed.")
@@ -128,7 +129,7 @@ jobs:
                   "prerelease": False,
                   "make_latest": "true",
               })
-          
+
           require(not release["draft"] and not release["prerelease"], "Release is not a final publication.")
           require(release["tag_name"] == tag and release["name"] == title, "Release identity differs.")
           require(release["body"].replace("\r\n", "\n").strip() == notes.strip(), "Release notes differ.")
@@ -140,5 +141,5 @@ jobs:
               summary.write(f"Tagged commit: `{sha}`\n\n")
               summary.write("Research files are unchanged; only the release workflow was added.\n")
           print(json.dumps({"url": release["html_url"], "tag": tag, "sha": sha, "research_ci": latest["html_url"]}))
-          
+
           PY
