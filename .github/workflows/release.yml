@@ -88,7 +88,7 @@ jobs:
           require(repo == os.environ["AUDITED_REPOSITORY"], "Unexpected repository.")
           comparison = api("/compare/" + baseline + "..." + sha)
           require(comparison["status"] == "ahead", "Audited baseline must be an ancestor.")
-          require(comparison["total_commits"] == 1, "Only one release-automation commit is allowed.")
+          require(comparison["total_commits"] == 2, "Exactly two reviewed release-automation commits are required.")
           changes = comparison["files"]
           require(
               len(changes) == 1
@@ -136,8 +136,8 @@ jobs:
           require(api("/releases/latest")["id"] == release["id"], "New release is not marked Latest.")
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
               summary.write(f"Published [{tag}]({release['html_url']}) after successful research CI.\n\n")
-              summary.write(f"Audited research baseline: \`{baseline}\`\n\n")
-              summary.write(f"Tagged commit: \`{sha}\`\n\n")
+              summary.write(f"Audited research baseline: `{baseline}`\n\n")
+              summary.write(f"Tagged commit: `{sha}`\n\n")
               summary.write("Research files are unchanged; only the release workflow was added.\n")
           print(json.dumps({"url": release["html_url"], "tag": tag, "sha": sha, "research_ci": latest["html_url"]}))
           
