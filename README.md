@@ -1,5 +1,7 @@
 # Causal Customer Decisions
 
+[![Public research checks](https://github.com/Prasanna-K-123/causal-customer-decisions/actions/workflows/verify.yml/badge.svg)](https://github.com/Prasanna-K-123/causal-customer-decisions/actions/workflows/verify.yml)
+
 **Does personalized targeting earn its complexity?** A three-arm randomized experiment, cross-fitted causal learning and an untouched evaluation set connect statistical evidence to a business decision.
 
 **Finding:** the learned policy did not establish superiority over a simple campaign. Under the predefined 40% margin and $0.05 contact-cost scenario, its paired difference was **−$0.049 per customer**, 95% CI **[−$0.193, +$0.095]**. The recommendation is to retain the development-selected uniform men's email policy for this historical population and scenario. This is not a claim of realized profit or present-day campaign performance.
@@ -24,6 +26,10 @@
 - An offline scenario explorer using aggregate results, with uncertainty and exploratory-analysis limits visible.
 
 The contribution is the complete evidence chain from randomized observations to a defensible operational recommendation. The underlying estimators and benchmark dataset are established; no new statistical algorithm or commercial impact is claimed.
+
+## Automated public checks
+
+The automated checks run on public files without private data, credentials or model refitting. They run the unit tests. Raw-source model reproduction is separate.
 
 ## Reproduce
 
