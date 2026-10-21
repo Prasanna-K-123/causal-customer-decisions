@@ -18,21 +18,21 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       AUDITED_REPOSITORY: Prasanna-K-123/causal-customer-decisions
-      AUDITED_BASELINE: 487f00f9fa8b2ffea612172ceb0bb35e375fca9c
-      RELEASE_TAG: v1.0.2
-      RELEASE_TITLE: Causal Customer Decisions — v1.0.2
+      AUDITED_BASELINE: e9a9e4b24f2a5ff144aa4c488a5391ec6fc6b385
+      RELEASE_TAG: v1.0.3
+      RELEASE_TITLE: Causal Customer Decisions — v1.0.3
       RELEASE_NOTES: |
-        This maintenance release aligns the source archive with the current public verification and research documentation.
+        This release corrects input validation in the causal evaluation API while preserving the frozen research results.
 
-        - Adds the public test workflow and clarifies reproduction instructions and study limitations.
-        - Corrects Markdown formatting in the release verification summary.
-        - Includes a guarded release workflow that checks source consistency and successful research CI before publication.
-        - All 10 public scientific tests pass at the tagged commit.
-        - The frozen experiment, models and reported empirical results are unchanged.
+        - Rejects fractional treatment/action labels before integer conversion, nonfinite scenarios and malformed score inputs.
+        - Adds deterministic tie-key, row-permutation, confidence/count-boundary and overflow checks; all 22 tests pass.
+        - Complete independent reruns of the unchanged baseline and this revision reproduce all five original aggregate outputs byte for byte in the pinned environment.
+        - Model definitions, data splits, protocol, selection rules and historical conclusions are unchanged.
 
-        [Open the scenario explorer](https://prasanna-k-123.github.io/causal-customer-decisions/).
+        [Validation and reproduction receipt](https://github.com/Prasanna-K-123/causal-customer-decisions/blob/main/reports/input_contract_revision_20261021.json)
+        · [Scenario explorer](https://prasanna-k-123.github.io/causal-customer-decisions/).
 
-        The original v1.0.0 release remains available. Historical experiment results and hypothetical financial scenarios do not establish present-day business profit or external validity.
+        Historical randomized observations and hypothetical cost/margin scenarios do not establish present-day commercial profit.
     steps:
       - name: Verify the audited baseline and publish
         shell: bash
@@ -89,13 +89,13 @@ jobs:
           require(repo == os.environ["AUDITED_REPOSITORY"], "Unexpected repository.")
           comparison = api("/compare/" + baseline + "..." + sha)
           require(comparison["status"] == "ahead", "Audited baseline must be an ancestor.")
-          require(comparison["total_commits"] == 3, "Exactly three reviewed release-automation commits are required.")
+          require(comparison["total_commits"] == 1, "Exactly one reviewed release-workflow update is required.")
           changes = comparison["files"]
           require(
               len(changes) == 1
               and changes[0]["filename"] == ".github/workflows/release.yml"
-              and changes[0]["status"] == "added",
-              "Research files must match the audited baseline exactly.",
+              and changes[0]["status"] == "modified",
+              "Research files must match the reviewed validation baseline exactly.",
           )
 
           deadline = time.monotonic() + 600
@@ -139,7 +139,7 @@ jobs:
               summary.write(f"Published [{tag}]({release['html_url']}) after successful research CI.\n\n")
               summary.write(f"Audited research baseline: `{baseline}`\n\n")
               summary.write(f"Tagged commit: `{sha}`\n\n")
-              summary.write("Research files are unchanged; only the release workflow was added.\n")
+              summary.write("Research files match the reviewed validation baseline; only the release workflow was updated.\n")
           print(json.dumps({"url": release["html_url"], "tag": tag, "sha": sha, "research_ci": latest["html_url"]}))
 
           PY
