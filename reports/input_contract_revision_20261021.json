@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-21",
+  "baseline_commit": "8a6faff353761b4f7a3e24335f8057135f093b10",
+  "finding": "Fractional treatment/action labels were silently truncated; nonfinite contact costs could produce a no-contact allocation.",
+  "change": "Validate labels before integer conversion; enforce finite aligned numerical inputs and scenario/confidence/count bounds; reject unresolved tie keys and numerical overflow.",
+  "unit_tests_passed": 22,
+  "original_research_tests": 10,
+  "new_input_contract_and_invariance_tests": 12,
+  "full_rerun": "Both the unchanged baseline and validation revision independently refit the complete fixed experiment using the same checksum-verified 64,000-row input and pinned environment.",
+  "output_comparison": {
+    "results.json": {
+      "baseline_matches_original": true,
+      "patched_matches_baseline": true,
+      "patched_matches_original": true,
+      "sha256": "2888617322c938643af6969f28db5ae27f9e539c2266913d10d71eaffdbe7c44"
+    },
+    "selection.json": {
+      "baseline_matches_original": true,
+      "patched_matches_baseline": true,
+      "patched_matches_original": true,
+      "sha256": "27b322c30a3dfea4d39a7f870490fd8d9ec96052671e62af53acaa30db661031"
+    },
+    "scenario_grid.csv": {
+      "baseline_matches_original": true,
+      "patched_matches_baseline": true,
+      "patched_matches_original": true,
+      "sha256": "250c66a588815fba4f44e7aa4877a053f593aee6cebd5dd50247e1be4c81a031"
+    },
+    "test_arm_summary.csv": {
+      "baseline_matches_original": true,
+      "patched_matches_baseline": true,
+      "patched_matches_original": true,
+      "sha256": "6ae46860fdec06375af33705b2ecef49fe59c794be5f331e27547f57a8655bbe"
+    },
+    "training_balance.csv": {
+      "baseline_matches_original": true,
+      "patched_matches_baseline": true,
+      "patched_matches_original": true,
+      "sha256": "8fa2c210f021180a3cdd94f3ad5ebac0a93f9c3f4e076aec7ad4c2d6b50b3226"
+    }
+  },
+  "source_comparison": {
+    "src/customer_policy/evaluation.py": {
+      "old_sha256": "54921ad47ad6a8703a6e6c272c3f77345afbe485ac6967037c411c753f852e08",
+      "new_sha256": "a25e7bd5aa81f62870162a4f50f1aedac44a3c27b98b48eb596a12f3f893921b"
+    },
+    "src/customer_policy/models.py": {
+      "old_sha256": "ec7d76faf36b5f6c3f0bb2bbd9d9ba25be9018da88ef889e9b0e7048c86d2e55",
+      "new_sha256": "ec7d76faf36b5f6c3f0bb2bbd9d9ba25be9018da88ef889e9b0e7048c86d2e55"
+    },
+    "src/customer_policy/experiment.py": {
+      "old_sha256": "375b0f87cd63a632008667c30755fda19f1b25b2150cc27668dbbbcd724b26f5",
+      "new_sha256": "375b0f87cd63a632008667c30755fda19f1b25b2150cc27668dbbbcd724b26f5"
+    },
+    "src/customer_policy/data.py": {
+      "old_sha256": "5b5c13a63c0c0a69c2e3d09dbac53224adc217f2b6a69eede549d8495beeb5bf",
+      "new_sha256": "5b5c13a63c0c0a69c2e3d09dbac53224adc217f2b6a69eede549d8495beeb5bf"
+    },
+    "config.json": {
+      "old_sha256": "080e61cfce8b135a6fd0a47a22e5e2e945fa2db4d975e984dea037ce13716647",
+      "new_sha256": "080e61cfce8b135a6fd0a47a22e5e2e945fa2db4d975e984dea037ce13716647"
+    },
+    "docs/PROTOCOL.md": {
+      "old_sha256": "4aa90276b650e4486267302572b050672546526c5bafab85028c9c37cf61e526",
+      "new_sha256": "4aa90276b650e4486267302572b050672546526c5bafab85028c9c37cf61e526"
+    }
+  },
+  "raw_source_md5": "a68a81291f53a14f4e29002629803ba3",
+  "limits": "Same host, Python 3.12.14 and exact pinned package versions. Not an external or cross-platform audit. No candidate, configuration, data split, fitted-model complexity or scientific result was reselected."
+}

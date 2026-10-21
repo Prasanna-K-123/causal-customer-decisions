@@ -29,7 +29,9 @@ The contribution is the complete evidence chain from randomized observations to 
 
 ## Automated public checks
 
-The automated checks run on public files without private data, credentials or model refitting. They run the unit tests. Raw-source model reproduction is separate.
+The automated checks run on public files without private data, credentials or model refitting. All 22 tests cover the original research checks plus input-contract, numerical-boundary and row-order invariance checks. Raw-source model reproduction is separate.
+
+The [21 October validation revision](docs/INPUT_CONTRACT_REVISION_20261021.md) rejects malformed treatment/action labels before integer conversion and requires finite scenario inputs. Independent complete reruns of the original and revised code reproduce all five published aggregate outputs byte for byte in the pinned environment.
 
 ## Reproduce
 
