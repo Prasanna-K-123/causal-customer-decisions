@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-26T10:18:50.537Z",
+  "explorer_script_scenario_states": 896,
+  "local_explorer_link_failures": [],
+  "original_scientific_files_byte_unchanged": [
+    "src/customer_policy/data.py",
+    "src/customer_policy/evaluation.py",
+    "src/customer_policy/experiment.py",
+    "src/customer_policy/models.py",
+    "src/customer_policy/reporting.py",
+    "src/customer_policy/__init__.py",
+    "reports/data_audit.json",
+    "reports/DECISION_MEMO.md",
+    "reports/input_contract_revision_20261021.json",
+    "reports/policy_comparison.svg",
+    "reports/reproduction_check.json",
+    "reports/results.json",
+    "reports/scenario_grid.csv",
+    "reports/selection.json",
+    "reports/TECHNICAL_REPORT.md",
+    "reports/test_arm_summary.csv",
+    "reports/training_balance.csv",
+    "tests/test_core.py",
+    "tests/test_input_contracts.py",
+    "docs/PROTOCOL.md"
+  ],
+  "visual_browser_qa": "Not performed; script logic exercised in a minimal DOM harness only",
+  "publication": "Not performed by extension worker",
+  "explorer_sha256": "ca7c2b9ceb831b6badc7060f07c6c2cfb6bd0ce00b7bbd00fad0317ab5887556"
+}

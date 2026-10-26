@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "seed": 20261026,
+  "source_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "source_bytes": 311422618,
+  "source_rows": 13979592,
+  "cohort_modulus": 16,
+  "cohort_salt": 2026102601,
+  "split_salt": 2026102602,
+  "fold_salt": 2026102603,
+  "chunksize": 200000,
+  "budgets": [
+    0,
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1
+  ],
+  "retention_ratios": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "costs": {
+    "visit": [
+      0,
+      0.001,
+      0.005,
+      0.01
+    ],
+    "conversion": [
+      0,
+      0.0001,
+      0.0005,
+      0.001
+    ]
+  },
+  "primary_outcome": "visit",
+  "outcomes": [
+    "visit",
+    "conversion"
+  ],
+  "bootstrap_draws": 1000,
+  "threads": 2
+}

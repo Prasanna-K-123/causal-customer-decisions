@@ -1,0 +1,280 @@
+{
+  "stages": [
+    {
+      "stage": "public_tests_before_real_model_evaluation",
+      "wall_seconds": 0.3593971999362111,
+      "process_cpu_seconds": 0.515625,
+      "observed_peak_rss_bytes": 169238528
+    },
+    {
+      "stage": "synthetic_full_propensity",
+      "wall_seconds": 0.04952600016258657,
+      "process_cpu_seconds": 0.0625,
+      "observed_peak_rss_bytes": 169254912
+    },
+    {
+      "stage": "synthetic_propensity_fold_0",
+      "wall_seconds": 0.037711699958890676,
+      "process_cpu_seconds": 0.046875,
+      "observed_peak_rss_bytes": 169975808
+    },
+    {
+      "stage": "synthetic_propensity_fold_1",
+      "wall_seconds": 0.04262569989077747,
+      "process_cpu_seconds": 0.046875,
+      "observed_peak_rss_bytes": 170041344
+    },
+    {
+      "stage": "synthetic_propensity_fold_2",
+      "wall_seconds": 0.038887200178578496,
+      "process_cpu_seconds": 0.046875,
+      "observed_peak_rss_bytes": 170041344
+    },
+    {
+      "stage": "synthetic_pooled_logistic",
+      "wall_seconds": 0.08136870013549924,
+      "process_cpu_seconds": 0.09375,
+      "observed_peak_rss_bytes": 183201792
+    },
+    {
+      "stage": "synthetic_t_learner_arm_0",
+      "wall_seconds": 0.3530746998731047,
+      "process_cpu_seconds": 0.6875,
+      "observed_peak_rss_bytes": 174784512
+    },
+    {
+      "stage": "synthetic_t_learner_arm_1",
+      "wall_seconds": 0.3427858001086861,
+      "process_cpu_seconds": 0.6875,
+      "observed_peak_rss_bytes": 174964736
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_0",
+      "wall_seconds": 0.6648659999482334,
+      "process_cpu_seconds": 1.328125,
+      "observed_peak_rss_bytes": 174522368
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_1",
+      "wall_seconds": 0.6388904999475926,
+      "process_cpu_seconds": 1.25,
+      "observed_peak_rss_bytes": 174710784
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_2",
+      "wall_seconds": 0.7036780000198632,
+      "process_cpu_seconds": 1.4375,
+      "observed_peak_rss_bytes": 174608384
+    },
+    {
+      "stage": "synthetic_dr_ranking",
+      "wall_seconds": 0.4242034999188036,
+      "process_cpu_seconds": 0.84375,
+      "observed_peak_rss_bytes": 174911488
+    },
+    {
+      "stage": "synthetic_prediction_and_known_truth",
+      "wall_seconds": 0.6404241998679936,
+      "process_cpu_seconds": 1.203125,
+      "observed_peak_rss_bytes": 176820224
+    },
+    {
+      "stage": "load_verified_private_cohort",
+      "wall_seconds": 0.6496039000339806,
+      "process_cpu_seconds": 0.640625,
+      "observed_peak_rss_bytes": 316506112
+    },
+    {
+      "stage": "criteo_full_propensity",
+      "wall_seconds": 1.2421944001689553,
+      "process_cpu_seconds": 1.59375,
+      "observed_peak_rss_bytes": 377364480
+    },
+    {
+      "stage": "criteo_propensity_fold_0",
+      "wall_seconds": 0.7164606000296772,
+      "process_cpu_seconds": 0.96875,
+      "observed_peak_rss_bytes": 389836800
+    },
+    {
+      "stage": "criteo_propensity_fold_1",
+      "wall_seconds": 0.6759069000836462,
+      "process_cpu_seconds": 0.859375,
+      "observed_peak_rss_bytes": 392245248
+    },
+    {
+      "stage": "criteo_propensity_fold_2",
+      "wall_seconds": 0.6060180000495166,
+      "process_cpu_seconds": 0.734375,
+      "observed_peak_rss_bytes": 391917568
+    },
+    {
+      "stage": "development_propensity_prediction",
+      "wall_seconds": 0.05419830000028014,
+      "process_cpu_seconds": 0.0625,
+      "observed_peak_rss_bytes": 324722688
+    },
+    {
+      "stage": "visit_pooled_logistic",
+      "wall_seconds": 1.8146691999863833,
+      "process_cpu_seconds": 2.390625,
+      "observed_peak_rss_bytes": 450613248
+    },
+    {
+      "stage": "visit_t_learner_arm_0",
+      "wall_seconds": 0.6669519999995828,
+      "process_cpu_seconds": 1.3125,
+      "observed_peak_rss_bytes": 336949248
+    },
+    {
+      "stage": "visit_t_learner_arm_1",
+      "wall_seconds": 3.181701499968767,
+      "process_cpu_seconds": 6.28125,
+      "observed_peak_rss_bytes": 398163968
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_0",
+      "wall_seconds": 3.98667459981516,
+      "process_cpu_seconds": 7.90625,
+      "observed_peak_rss_bytes": 385847296
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_1",
+      "wall_seconds": 3.9529665999580175,
+      "process_cpu_seconds": 7.78125,
+      "observed_peak_rss_bytes": 393633792
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_2",
+      "wall_seconds": 3.852453599916771,
+      "process_cpu_seconds": 7.6875,
+      "observed_peak_rss_bytes": 391712768
+    },
+    {
+      "stage": "visit_dr_ranking",
+      "wall_seconds": 1.5949611000251025,
+      "process_cpu_seconds": 3.140625,
+      "observed_peak_rss_bytes": 365096960
+    },
+    {
+      "stage": "visit_development_prediction_selection",
+      "wall_seconds": 3.3121313001029193,
+      "process_cpu_seconds": 5.15625,
+      "observed_peak_rss_bytes": 376487936
+    },
+    {
+      "stage": "conversion_pooled_logistic",
+      "wall_seconds": 3.111142900073901,
+      "process_cpu_seconds": 4.484375,
+      "observed_peak_rss_bytes": 462794752
+    },
+    {
+      "stage": "conversion_t_learner_arm_0",
+      "wall_seconds": 0.4974511000327766,
+      "process_cpu_seconds": 1.0,
+      "observed_peak_rss_bytes": 350035968
+    },
+    {
+      "stage": "conversion_t_learner_arm_1",
+      "wall_seconds": 2.8819117001257837,
+      "process_cpu_seconds": 5.734375,
+      "observed_peak_rss_bytes": 412102656
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_0",
+      "wall_seconds": 3.903827999951318,
+      "process_cpu_seconds": 7.78125,
+      "observed_peak_rss_bytes": 406241280
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_1",
+      "wall_seconds": 3.7877783000003546,
+      "process_cpu_seconds": 7.53125,
+      "observed_peak_rss_bytes": 403329024
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_2",
+      "wall_seconds": 3.587015600176528,
+      "process_cpu_seconds": 7.140625,
+      "observed_peak_rss_bytes": 398721024
+    },
+    {
+      "stage": "conversion_dr_ranking",
+      "wall_seconds": 1.6011970001272857,
+      "process_cpu_seconds": 3.1875,
+      "observed_peak_rss_bytes": 376766464
+    },
+    {
+      "stage": "conversion_development_prediction_selection",
+      "wall_seconds": 3.3745104998815805,
+      "process_cpu_seconds": 5.25,
+      "observed_peak_rss_bytes": 390828032
+    },
+    {
+      "stage": "write_selection_lock_before_test_evaluation",
+      "wall_seconds": 0.03972269990481436,
+      "process_cpu_seconds": 0.046875,
+      "observed_peak_rss_bytes": 352059392
+    },
+    {
+      "stage": "test_propensity_prediction",
+      "wall_seconds": 0.1689470000565052,
+      "process_cpu_seconds": 0.15625,
+      "observed_peak_rss_bytes": 363851776
+    },
+    {
+      "stage": "visit_test_prediction",
+      "wall_seconds": 1.8845045000780374,
+      "process_cpu_seconds": 3.625,
+      "observed_peak_rss_bytes": 384401408
+    },
+    {
+      "stage": "visit_locked_test_metrics",
+      "wall_seconds": 16.230172200128436,
+      "process_cpu_seconds": 16.296875,
+      "observed_peak_rss_bytes": 402378752
+    },
+    {
+      "stage": "conversion_test_prediction",
+      "wall_seconds": 1.8812017999589443,
+      "process_cpu_seconds": 3.625,
+      "observed_peak_rss_bytes": 407310336
+    },
+    {
+      "stage": "conversion_locked_test_metrics",
+      "wall_seconds": 16.07015740009956,
+      "process_cpu_seconds": 16.125,
+      "observed_peak_rss_bytes": 404238336
+    },
+    {
+      "stage": "deterministic_frozen_prediction_repeat",
+      "wall_seconds": 4.017646000022069,
+      "process_cpu_seconds": 7.796875,
+      "observed_peak_rss_bytes": 435982336
+    }
+  ],
+  "wall_since_start_seconds": 95.57817699993029,
+  "observed_process_peak_rss_bytes": 462794752,
+  "sampling_interval_seconds": 0.05,
+  "measurement_limit": "Sampled RSS; excludes sibling processes; local shared-machine timings",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 190 Stepping 0, GenuineIntel",
+    "logical_cpus": 8,
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    }
+  }
+}

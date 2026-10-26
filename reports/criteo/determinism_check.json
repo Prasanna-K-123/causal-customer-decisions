@@ -1,0 +1,16 @@
+{
+  "frozen_prediction_max_absolute_difference": {
+    "visit": {
+      "pooled_logistic": 0.0,
+      "t_learner": 0.0,
+      "dr_learner": 0.0
+    },
+    "conversion": {
+      "pooled_logistic": 0.0,
+      "t_learner": 0.0,
+      "dr_learner": 0.0
+    }
+  },
+  "small_refit_determinism": "Independent identical fits in test_criteo_release",
+  "scope": "Repeated predictions and a small refit; not a second complete real-data refit."
+}

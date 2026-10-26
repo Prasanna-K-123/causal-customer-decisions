@@ -1,0 +1,96 @@
+{
+  "training_rows": 60000,
+  "evaluation_rows": 40000,
+  "seed": 20261026,
+  "known_treatment_probability": 0.5,
+  "truth": {
+    "stratum_weights": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "original_p0": [
+      0.01,
+      0.04,
+      0.1
+    ],
+    "original_p1": [
+      0.02,
+      0.06,
+      0.08
+    ],
+    "r0": 2,
+    "r1": 5,
+    "selected_s0": [
+      0.019801980198019802,
+      0.07692307692307693,
+      0.18181818181818182
+    ],
+    "selected_s1": [
+      0.09259259259259259,
+      0.24193548387096772,
+      0.30303030303030304
+    ],
+    "true_weighted_contrast": 0.004999999999999998,
+    "naive_selected_contrast_at_original_X_weights": 0.12420578286116452,
+    "oracle_recovered_contrast": 0.004999999999999992,
+    "max_absolute_recovery_error": 1.3877787807814457e-17,
+    "constant_X_counterexample": {
+      "p0": 0.04,
+      "p1": 0.06,
+      "original_contrast": 0.02,
+      "selected_contrast": 0.1650124069478908,
+      "X_T_independent_before_and_after_selection": true
+    },
+    "warning": "Truth and retention parameters are known only because this is constructed."
+  },
+  "models": {
+    "pooled_logistic": {
+      "pehe": 0.023669879370413753,
+      "true_top20_excess_vs_random": 0.006046495224364629,
+      "estimated_top20_excess_vs_random": {
+        "estimate": 0.005116628116349387,
+        "se": 0.0011715366715531828,
+        "ci95": [
+          0.002820458433537219,
+          0.007412797799161556
+        ],
+        "rows": 40000,
+        "fingerprint_groups": 40000
+      },
+      "truth_inside_pointwise_interval": true
+    },
+    "t_learner": {
+      "pehe": 0.014830046306594073,
+      "true_top20_excess_vs_random": 0.005509106955511599,
+      "estimated_top20_excess_vs_random": {
+        "estimate": 0.0033659032292245343,
+        "se": 0.0010759203663505057,
+        "ci95": [
+          0.0012571380609444024,
+          0.005474668397504667
+        ],
+        "rows": 40000,
+        "fingerprint_groups": 40000
+      },
+      "truth_inside_pointwise_interval": false
+    },
+    "dr_learner": {
+      "pehe": 0.00998420231918326,
+      "true_top20_excess_vs_random": 0.005604653575455165,
+      "estimated_top20_excess_vs_random": {
+        "estimate": 0.004347024945460259,
+        "se": 0.0010887547194117805,
+        "ci95": [
+          0.0022131049074151574,
+          0.006480944983505361
+        ],
+        "rows": 40000,
+        "fingerprint_groups": 40000
+      },
+      "truth_inside_pointwise_interval": true
+    }
+  },
+  "true_mean_effect": 0.0017090590156868266,
+  "oracle_top20_excess_vs_random": 0.006838634229634525
+}

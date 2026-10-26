@@ -27,9 +27,17 @@
 
 The contribution is the complete evidence chain from randomized observations to a defensible operational recommendation. The underlying estimators and benchmark dataset are established; no new statistical algorithm or commercial impact is claimed.
 
+## Scale and selection-sensitivity extension · 26 October 2026
+
+The separate [Criteo extension](reports/criteo/TECHNICAL_REPORT.md) audits **13,979,592 rows** and fits three fixed rankings on a **873,520-row feature-group hash cohort**. Stronger factual prediction did not establish better primary held-out ranking: the selected two-model learner minus pooled logistic has integrated release-response difference **−0.000195**, 95% CI **[−0.001062, +0.000671]**.
+
+Outcome-dependent source sampling prevents an unqualified original-campaign causal interpretation. A declared retention-ratio sensitivity grid changes the reconstructed average contrast and allocation. The extension includes full audit receipts, local time/memory measurements, known-truth checks and two complete matching fixed-model runs. It preserves the Hillstrom scientific files and finding.
+
+[Explore the extension](https://prasanna-k-123.github.io/causal-customer-decisions/criteo/) · [Protocol v1.0](docs/criteo/PROTOCOL_V1.md) · [Data and identification](docs/criteo/DATA_AND_IDENTIFICATION.md) · [Reproduce](docs/criteo/REPRODUCE.md) · [Verification](reports/criteo/verification.json)
+
 ## Automated public checks
 
-The automated checks run on public files without private data, credentials or model refitting. All 22 tests cover the original research checks plus input-contract, numerical-boundary and row-order invariance checks. Raw-source model reproduction is separate.
+The automated checks run on public files without private data or credentials. Extension checks include small deterministic synthetic model fits; full raw-source fitting remains a separate reproduction step. The 22 original tests cover research checks plus input-contract, numerical-boundary and row-order invariance checks. The separate Criteo extension adds 22 tests, for 44 public checks in total. Raw-source model reproduction is separate.
 
 The [21 October validation revision](docs/INPUT_CONTRACT_REVISION_20261021.md) rejects malformed treatment/action labels before integer conversion and requires finite scenario inputs. Independent complete reruns of the original and revised code reproduce all five published aggregate outputs byte for byte in the pinned environment.
 
@@ -40,7 +48,7 @@ Python 3.12. Install the pinned environment, run tests, run the analysis and gen
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-criteo.txt
 PYTHONPATH=src python -m unittest discover -s tests -v
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONPATH=src python -m customer_policy.experiment
 PYTHONPATH=src python -m customer_policy.reporting
@@ -52,7 +60,7 @@ Open `docs/index.html` in a browser. The explorer works offline; its report link
 
 The data comes from Kevin Hillstrom's MineThatData experiment. Campaign labels refer to merchandise, not observed customer gender. Margin, costs and capacity are scenarios. More than 99% of evaluation customers have zero spending, so policy differences are imprecise. No raw-data redistribution license has been established; obtain data separately under the provider's terms. Documentation cites the data creator and methodological sources.
 
-Project: Prasanna K · Economics student at Madras School of Economics.
+Project: Prasanna K · Economics student at Madras School of Economics, 2026–28.
 
 ## 26 October 2026 verification
 

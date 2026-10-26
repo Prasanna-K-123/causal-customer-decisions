@@ -1,0 +1,3 @@
+# Extension measurement dependency; original requirements.txt is unchanged.
+-r requirements.txt
+psutil==7.2.2

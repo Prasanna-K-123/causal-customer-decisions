@@ -1,0 +1,9 @@
+{
+  "protocol_version": "1.0",
+  "created_at": "2026-10-26T09:56:41.500Z",
+  "stage": "Before parsing outcome rows or fitting extension models",
+  "source_access_so_far": "Compressed-file hash/header verified by parent; published summary statistics available in primary paper",
+  "protocol_sha256": "14c70e46426caa94fdf2f3cdc56dd41e13f51f25b00dff17672ed2663bfbf737",
+  "config_sha256": "239cb07228395a18d48eccc84eb6120f3f660313aaaf5eea8d080910653c1e62",
+  "source_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc"
+}

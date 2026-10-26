@@ -1,0 +1,34 @@
+{
+  "stages": [
+    {
+      "stage": "aggregate_tables_and_figures",
+      "wall_seconds": 0.8384671998210251,
+      "process_cpu_seconds": 0.8125,
+      "observed_peak_rss_bytes": 116473856
+    }
+  ],
+  "wall_since_start_seconds": 0.8631108000408858,
+  "observed_process_peak_rss_bytes": 116473856,
+  "sampling_interval_seconds": 0.05,
+  "measurement_limit": "Sampled RSS; excludes sibling processes; local shared-machine timings",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 190 Stepping 0, GenuineIntel",
+    "logical_cpus": 8,
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    }
+  }
+}

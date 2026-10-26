@@ -1,0 +1,46 @@
+{
+  "stages": [
+    {
+      "stage": "compressed_source_verification",
+      "wall_seconds": 0.4128050999715924,
+      "process_cpu_seconds": 0.40625,
+      "observed_peak_rss_bytes": 86413312
+    },
+    {
+      "stage": "full_stream_audit_and_hash_sample",
+      "wall_seconds": 158.61153470003046,
+      "process_cpu_seconds": 153.78125,
+      "observed_peak_rss_bytes": 387739648
+    },
+    {
+      "stage": "fingerprint_audit_and_private_cohort_save",
+      "wall_seconds": 5.990133000072092,
+      "process_cpu_seconds": 5.9375,
+      "observed_peak_rss_bytes": 767381504
+    }
+  ],
+  "wall_since_start_seconds": 165.50245760008693,
+  "observed_process_peak_rss_bytes": 767381504,
+  "sampling_interval_seconds": 0.05,
+  "measurement_limit": "Sampled RSS; excludes sibling processes; local shared-machine timings",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 190 Stepping 0, GenuineIntel",
+    "logical_cpus": 8,
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    }
+  }
+}
