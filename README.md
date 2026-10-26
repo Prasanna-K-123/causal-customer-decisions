@@ -52,4 +52,8 @@ Open `docs/index.html` in a browser. The explorer works offline; its report link
 
 The data comes from Kevin Hillstrom's MineThatData experiment. Campaign labels refer to merchandise, not observed customer gender. Margin, costs and capacity are scenarios. More than 99% of evaluation customers have zero spending, so policy differences are imprecise. No raw-data redistribution license has been established; obtain data separately under the provider's terms. Documentation cites the data creator and methodological sources.
 
-Project: Prasanna K · M.A. Actuarial Economics, Madras School of Economics.
+Project: Prasanna K · Economics student at Madras School of Economics.
+
+## 26 October 2026 verification
+
+A fresh download and complete fixed-model rerun on Windows reproduce the scientific values in all five checked aggregate outputs within absolute/relative tolerance `1e-10`. Platform text bytes and the environment field differ; no byte-identical cross-platform claim is made. See [the dated verification guide](docs/VERIFICATION_20261026.md). The reported original experiment remains the reference study.
