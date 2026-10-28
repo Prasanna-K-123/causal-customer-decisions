@@ -44,7 +44,8 @@ jobs:
       - name: Verify deterministic aggregate report generation
         run: |
           python -m customer_policy.reporting
-          git diff --exit-code -- docs/index.html reports/policy_comparison.svg reports/TECHNICAL_REPORT.md reports/DECISION_MEMO.md
+          python -m criteo_release.reporting --page-only
+          git diff --exit-code -- docs/index.html docs/criteo/index.html reports/policy_comparison.svg reports/TECHNICAL_REPORT.md reports/DECISION_MEMO.md
       - name: Check refs again after verification
         env:
           GH_TOKEN: ${{ github.token }}

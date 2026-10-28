@@ -1,5 +1,7 @@
 """Plots and aggregate tables generated only from saved, locked results."""
 from __future__ import annotations
+import argparse
+import html
 import json
 from pathlib import Path
 import numpy as np
@@ -12,6 +14,51 @@ from .runtime import Measurement
 
 LABELS={"pooled_logistic":"Pooled logistic","t_learner":"Two-model boosting","dr_learner":"Cross-fitted DR ranking"}
 COLORS={"pooled_logistic":"#526880","t_learner":"#087d76","dr_learner":"#c16931"}
+
+def render_explorer(project=PROJECT):
+    """Render the explorer from its template and saved aggregate evidence only."""
+    folder=Path(project)/"reports/criteo"
+    read=lambda name:json.loads((folder/name).read_text())
+    result=read("results.json"); audit=read("audit_runtime.json"); model=read("model_runtime.json")
+    verification=read("verification.json"); tests=read("test_receipt.json"); lock=read("selection_lock.json")
+    platform=audit["environment"]["platform"]
+    system="Windows" if platform.startswith("Windows") else ("Linux" if platform.startswith("Linux") else platform)
+    recorded_date=lock["created_utc"][:10]
+    reference_label=f"Recorded {system} study · {recorded_date}"
+    def timing(record):
+        seconds=sum(stage["wall_seconds"] for stage in record["stages"])
+        peak=record["observed_process_peak_rss_bytes"]
+        rss="RSS unavailable (null)" if peak is None else f"{peak/(1024**2):.1f} MiB observed peak process RSS"
+        return f"{seconds:.1f} seconds, with {rss}"
+    repeat=verification.get("complete_model_rerun")
+    if repeat:
+        repeat_label="Two recorded fixed-model runs"
+        difference=repeat["max_absolute_difference"]
+        agreement="exactly" if difference==0 else f"within {difference:.3g} maximum absolute difference"
+        model_identity="agree" if repeat["same_frozen_model_sha256"] else "differ"
+        repeat_text=(f"Two complete fixed-model runs compared {repeat['numeric_fields_compared']:,} scientific numeric fields {agreement} "
+                     f"on the recorded {system} system; their serialized model hashes {model_identity}.")
+        repeat_scope="Those two runs reused the same verified cohort; the full source was ingested once for that pair."
+    else:
+        repeat_label="Single recorded model run"
+        repeat_text="This receipt does not record a second complete model run or matching model hashes."
+        repeat_scope="The saved receipt covers this execution only."
+    values={
+        "EVIDENCE_JSON":json.dumps(result,separators=(",",":"),allow_nan=False).replace("<","\\u003c"),
+        "REFERENCE_LABEL":html.escape(reference_label),
+        "REFERENCE_TESTS":str(tests["tests_run"]),
+        "REFERENCE_REPEAT_LABEL":html.escape(repeat_label),
+        "REFERENCE_RUNTIME":html.escape(f"Full-file validation and sampling: {timing(audit)}. Model fitting, synthetic checks and evaluation: {timing(model)}."),
+        "REFERENCE_VERIFICATION":html.escape(f"Independent aggregate recomputation passed {verification['number_of_checks']} checks. "+repeat_text),
+        "REFERENCE_REPEAT_SCOPE":html.escape(repeat_scope),
+    }
+    template=(Path(project)/"docs/criteo/demo.template.html").read_text()
+    for key,value in values.items():
+        marker="@@"+key+"@@"
+        if marker not in template:raise ValueError("Missing explorer template marker: "+key)
+        template=template.replace(marker,value)
+    if "@@" in template:raise ValueError("Unresolved explorer template marker")
+    (Path(project)/"docs/criteo/index.html").write_text(template)
 
 def main():
     folder=PROJECT/"reports/criteo"
@@ -81,4 +128,10 @@ def main():
         pd.DataFrame(curves).to_csv(folder/"budget_curves.csv",index=False)
         pd.DataFrame(scenarios).to_csv(folder/"selection_scenarios.csv",index=False)
     print("Generated aggregate CSVs and three SVG figures from locked results.")
-if __name__=="__main__":main()
+    render_explorer()
+if __name__=="__main__":
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--page-only",action="store_true",help="Render only the explorer; preserve scientific files and all historical runtime receipts")
+    args=parser.parse_args()
+    if args.page_only:render_explorer()
+    else:main()
