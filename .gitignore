@@ -6,3 +6,6 @@ data/raw/*
 artifacts/
 *.egg-info/
 .DS_Store
+
+# Optional raster export; the reviewed SVG is the canonical public figure.
+reports/policy_comparison.png

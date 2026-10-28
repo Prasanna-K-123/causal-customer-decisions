@@ -1,0 +1,217 @@
+{
+  "protocol_sha256": "14c70e46426caa94fdf2f3cdc56dd41e13f51f25b00dff17672ed2663bfbf737",
+  "source_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "compressed_source_bytes": 311422618,
+  "rows": 13979592,
+  "columns": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11",
+    "treatment",
+    "conversion",
+    "visit",
+    "exposure"
+  ],
+  "missing_cells": 0,
+  "nonfinite_cells": 0,
+  "labels_validated_before_integer_conversion": true,
+  "binary_counts": {
+    "treatment": {
+      "0": 2096937,
+      "1": 11882655
+    },
+    "conversion": {
+      "0": 13938818,
+      "1": 40774
+    },
+    "visit": {
+      "0": 13322663,
+      "1": 656929
+    },
+    "exposure": {
+      "0": 13551380,
+      "1": 428212
+    }
+  },
+  "feature_audit": {
+    "f0": {
+      "min": 12.616364906986497,
+      "max": 26.74525510669564,
+      "mean": 19.62029748724442,
+      "population_sd": 5.377463629463962,
+      "exact_cardinality": null
+    },
+    "f1": {
+      "min": 10.059654474774547,
+      "max": 16.34418683323554,
+      "mean": 10.069976509475104,
+      "population_sd": 0.10475572707314752,
+      "exact_cardinality": 60
+    },
+    "f2": {
+      "min": 8.214382844395335,
+      "max": 9.051961945804948,
+      "mean": 8.44658230692245,
+      "population_sd": 0.29931608908815704,
+      "exact_cardinality": null
+    },
+    "f3": {
+      "min": -8.39838674285089,
+      "max": 4.679881620097284,
+      "mean": 4.178923067825266,
+      "population_sd": 1.3366449492762364,
+      "exact_cardinality": 552
+    },
+    "f4": {
+      "min": 10.280525225748212,
+      "max": 21.123507734315055,
+      "mean": 10.338837294853896,
+      "population_sd": 0.34330813664244914,
+      "exact_cardinality": 260
+    },
+    "f5": {
+      "min": -9.011891520498516,
+      "max": 4.115453421277861,
+      "mean": 4.028512923193422,
+      "population_sd": 0.4310974289197804,
+      "exact_cardinality": 132
+    },
+    "f6": {
+      "min": -31.429783775633886,
+      "max": 0.29444271125560606,
+      "mean": -4.155355515113871,
+      "population_sd": 4.577913961819066,
+      "exact_cardinality": 1645
+    },
+    "f7": {
+      "min": 4.833814577796811,
+      "max": 11.998400591725755,
+      "mean": 5.101764646545401,
+      "population_sd": 1.2052476869910351,
+      "exact_cardinality": null
+    },
+    "f8": {
+      "min": 3.63510661177053,
+      "max": 3.971857989350875,
+      "mean": 3.933580837984482,
+      "population_sd": 0.05665958239543632,
+      "exact_cardinality": 3743
+    },
+    "f9": {
+      "min": 13.190055934673358,
+      "max": 75.29501735734412,
+      "mean": 16.027638330068854,
+      "population_sd": 7.01897462788266,
+      "exact_cardinality": 1594
+    },
+    "f10": {
+      "min": 5.300374864042156,
+      "max": 6.473917229316857,
+      "mean": 5.333395557015007,
+      "population_sd": 0.16822884142973474,
+      "exact_cardinality": null
+    },
+    "f11": {
+      "min": -1.383940669255639,
+      "max": -0.16867922100056124,
+      "mean": -0.17096724767851557,
+      "population_sd": 0.022832767548824448,
+      "exact_cardinality": 136
+    }
+  },
+  "diagnostics": {
+    "conversion_without_visit": 0,
+    "control_exposure": 0
+  },
+  "full_fingerprint_audit": {
+    "unique_groups": 12353333,
+    "duplicate_feature_hash_rows": 1626259,
+    "groups_with_multiplicity": 1185455,
+    "maximum_group_size": 13,
+    "sorted_full_fingerprint_hash": "729e8fe5aa22daea0e20864b5148ca90a9edb06fd639f2bc23ebeafd524da3f5",
+    "collision_caveat": "64-bit feature fingerprint, not a verified person ID; full-source collisions not exhaustively compared"
+  },
+  "cohort": {
+    "rows": 873520,
+    "fraction_of_source": 0.06248537153301756,
+    "feature_fingerprint_collisions_observed": 0,
+    "cross_partition_group_overlap": 0,
+    "crossfit_group_overlap": 0,
+    "cohort_file_sha256": "8c4e4d258f4968537fa91fad70e60076b471bce0b514311dbb182dc447a89947",
+    "splits": {
+      "train": {
+        "rows": 524458,
+        "fingerprint_groups": 463222,
+        "sorted_fingerprint_sha256": "e1069ac6e7ec893a09b51fa6f99c4687126dd2cc1ec0b636386068c4aedeff62",
+        "row_id_sha256": "321634349608861965e9b64f28b3718e65232e2970a2e9c0b45ff2e10b85c39f",
+        "content_sha256": "c67684b28b9349a9e9548811cdfbb79fcf4e2ec1e982881bb452561ad16ba3db",
+        "treatment_counts": {
+          "0": 78653,
+          "1": 445805
+        },
+        "event_counts": {
+          "visit": {
+            "0": 3116,
+            "1": 21673
+          },
+          "conversion": {
+            "0": 137,
+            "1": 1432
+          }
+        }
+      },
+      "development": {
+        "rows": 174444,
+        "fingerprint_groups": 154214,
+        "sorted_fingerprint_sha256": "04f9a067e252b5d9b81467bb331deb361e453c922792944e64d1a4a018d31282",
+        "row_id_sha256": "ac12cf36db3b6be912d51b952b0eede33a94ba0f6a1c3dbe44ae06e7a038ce3b",
+        "content_sha256": "2a39335d3e552af298a332fad9a8e348002ddf5f94ae199c9276d130ab9609fe",
+        "treatment_counts": {
+          "0": 26369,
+          "1": 148075
+        },
+        "event_counts": {
+          "visit": {
+            "0": 1027,
+            "1": 7291
+          },
+          "conversion": {
+            "0": 56,
+            "1": 466
+          }
+        }
+      },
+      "test": {
+        "rows": 174618,
+        "fingerprint_groups": 154294,
+        "sorted_fingerprint_sha256": "3d544b1ec21515ca8492601ab6d8b5c9acd823d83e40e6475a258db875b73385",
+        "row_id_sha256": "62ab2599aa98e399db528a5d058c4088ab8fcf38bfe0a2756e1b2f3c066fa050",
+        "content_sha256": "c43992f187833b35682ed545941e119c94d9d55e92e1e0a51b7d7cb22716a827",
+        "treatment_counts": {
+          "0": 26090,
+          "1": 148528
+        },
+        "event_counts": {
+          "visit": {
+            "0": 925,
+            "1": 7053
+          },
+          "conversion": {
+            "0": 51,
+            "1": 449
+          }
+        }
+      }
+    },
+    "caveat": "Feature group is not a verified person/advertiser identity."
+  }
+}

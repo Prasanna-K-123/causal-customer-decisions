@@ -23,14 +23,34 @@ class Measurement:
     def __init__(self, output):
         self.output, self.stages, self.peak = Path(output), [], 0
         self.start = time.perf_counter()
-        self.process = psutil.Process()
+        self.memory_error = None
+        try:
+            self.process = psutil.Process()
+        except (OSError, psutil.Error) as exc:
+            self.process = None
+            self.memory_error = f"{type(exc).__name__}: {exc}"
+
+    def sample_rss(self):
+        """Timing still works when a sandbox does not expose process memory."""
+        if self.process is None:
+            return None
+        try:
+            return self.process.memory_info().rss
+        except (OSError, psutil.Error) as exc:
+            self.memory_error = f"{type(exc).__name__}: {exc}"
+            return None
     @contextlib.contextmanager
     def stage(self, name):
         stop = threading.Event()
-        peaks = [self.process.memory_info().rss]
+        peaks = []
+        def sample():
+            value = self.sample_rss()
+            if value is not None:
+                peaks.append(value)
+        sample()
         def monitor():
             while not stop.wait(.05):
-                peaks.append(self.process.memory_info().rss)
+                sample()
         worker = threading.Thread(target=monitor, daemon=True)
         w, c = time.perf_counter(), time.process_time()
         worker.start()
@@ -39,11 +59,14 @@ class Measurement:
             yield
         finally:
             stop.set(); worker.join()
-            peaks.append(self.process.memory_info().rss)
+            sample()
             record = {"stage":name,"wall_seconds":time.perf_counter()-w,
                       "process_cpu_seconds":time.process_time()-c,
-                      "observed_peak_rss_bytes":max(peaks)}
-            self.peak = max(self.peak,max(peaks))
+                      "observed_peak_rss_bytes":max(peaks) if peaks else None,
+                      "rss_sample_count":len(peaks),
+                      "rss_measurement_error":self.memory_error}
+            if peaks:
+                self.peak = max(self.peak,max(peaks))
             self.stages.append(record)
             self.save()
             print(json.dumps(record), flush=True)
@@ -51,7 +74,9 @@ class Measurement:
         versions = {k:importlib.metadata.version(k) for k in
                     ["numpy","pandas","scipy","scikit-learn","matplotlib","psutil"]}
         dump_json(self.output,{"stages":self.stages,"wall_since_start_seconds":time.perf_counter()-self.start,
-            "observed_process_peak_rss_bytes":self.peak,"sampling_interval_seconds":.05,
+            "observed_process_peak_rss_bytes":self.peak or None,"sampling_interval_seconds":.05,
+            "rss_measurement_status":"unavailable_or_partial" if self.memory_error else "sampled",
+            "rss_measurement_error":self.memory_error,
             "measurement_limit":"Sampled RSS; excludes sibling processes; local shared-machine timings",
             "environment":{"python":sys.version,"platform":platform.platform(),
                 "processor":platform.processor(),"logical_cpus":os.cpu_count(),"versions":versions,

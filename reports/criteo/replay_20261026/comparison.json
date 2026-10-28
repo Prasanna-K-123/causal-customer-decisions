@@ -1,0 +1,161 @@
+{
+  "execution_date": "2026-10-26",
+  "documentation_date": "2026-10-28",
+  "scope": "Previously completed full source audit and fixed-model Linux replay; documentation update does not represent a new fit.",
+  "comparison_absolute_tolerance": 1e-10,
+  "original_directory": "reports/criteo",
+  "replay_directory": "reports/criteo/replay_20261026",
+  "comparisons": {
+    "data_audit.json": {
+      "numeric_leaves": 103,
+      "numeric_nonidentical": 0,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "original_sha256": "af78edecf4ce926f03757b2afdd069f703201d8a70b5d0e2d1bf7b73b8c39b7a",
+      "current_sha256": "21f08863b87afa882ec089f0ee049558052934f7912ea6342ae77ec6c931a03a",
+      "byte_identical": false,
+      "differences": [
+        {
+          "path": "/cohort/cohort_file_sha256",
+          "kind": "metadata",
+          "original": "8eef4e52514dea8a8314636532b1732a25b86037ff7ff631cdadaee3ef450920",
+          "current": "8c4e4d258f4968537fa91fad70e60076b471bce0b514311dbb182dc447a89947"
+        }
+      ]
+    },
+    "results.json": {
+      "numeric_leaves": 2567,
+      "numeric_nonidentical": 696,
+      "max_absolute_difference": 7.2267747341925315e-12,
+      "max_relative_difference": 1.26678189826295e-09,
+      "original_sha256": "ebee33b25112aba9589eb403ba9548f366e31f5bf40470cffad40ae48cb018f6",
+      "current_sha256": "122bbc81b873a28ea3b70dec13135ee5ca13da74fabd554e04d01ab2fc5bc45b",
+      "byte_identical": false
+    },
+    "synthetic_checks.json": {
+      "numeric_leaves": 55,
+      "numeric_nonidentical": 6,
+      "max_absolute_difference": 3.469446951953614e-18,
+      "max_relative_difference": 3.4497473465118607e-16,
+      "original_sha256": "dd73663b5ffb3be5d196df76ab53a0bee10561248b0a03c3eeeb8e9ef1e7adc0",
+      "current_sha256": "9a918bf638028d511e9570251f0a87328f1c7d529d7ad25d3627b5ea23196f91",
+      "byte_identical": false
+    },
+    "determinism_check.json": {
+      "numeric_leaves": 6,
+      "numeric_nonidentical": 0,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "original_sha256": "10970f55bd7fe7cd787c0040b902ee2d579b9f6063909c9ced7b42a257b83aa7",
+      "current_sha256": "a665a1b07a6eac3a8791040659641509543ff19a1b587ecf5bac92c924d5fcd1",
+      "byte_identical": false
+    },
+    "selection_lock.json": {
+      "numeric_leaves": 6,
+      "numeric_nonidentical": 6,
+      "max_absolute_difference": 4.616532850443278e-15,
+      "max_relative_difference": 2.2257860659865043e-11,
+      "original_sha256": "6c5bec749c0351957cbaa3e01b3d1b8edee63bd6605c230a05b18e85eeb24ea5",
+      "current_sha256": "f91c8195c1665c9b21d1bccac9906bf763a6bfc8a4e21fd91cba9803077904df",
+      "byte_identical": false,
+      "differences": [
+        {
+          "path": "/cohort_file_sha256",
+          "kind": "metadata",
+          "original": "8eef4e52514dea8a8314636532b1732a25b86037ff7ff631cdadaee3ef450920",
+          "current": "8c4e4d258f4968537fa91fad70e60076b471bce0b514311dbb182dc447a89947"
+        },
+        {
+          "path": "/created_utc",
+          "kind": "metadata",
+          "original": "2026-10-26T10:03:56.333355+00:00",
+          "current": "2026-10-26T15:11:23.615401+00:00"
+        },
+        {
+          "path": "/frozen_model_file_sha256",
+          "kind": "metadata",
+          "original": "201fd7122dedcaaa3e27ac90c9f89c8b8a5876fd1e428362d0677af7732449ec",
+          "current": "544014c023ccab515b4181f0503eaf7daf9297e947647b294e8470288c3cf05d"
+        },
+        {
+          "path": "/implementation_sha256/src/criteo_release/reporting.py",
+          "kind": "missing",
+          "original": null,
+          "current": "78a5d1f7faef71ec27b67ce48deea3839b4343be8f349f1851829ab29538fc87"
+        },
+        {
+          "path": "/implementation_sha256/src/criteo_release/runtime.py",
+          "kind": "metadata",
+          "original": "f8e7e1d5d1e6169ce0184061bc1481699fdabd34ef925d8d65663a5dc6d18d3a",
+          "current": "9fb7de7858fd044d47f7c22f3176ba1c3e43abb5afa69e02a55f1e32a39b0693"
+        },
+        {
+          "path": "/implementation_sha256/src/criteo_release/verify_outputs.py",
+          "kind": "missing",
+          "original": null,
+          "current": "f1f2d7c4a1ce5dcc245b2d7ab0dc3e3d91b81485be75bfa8d373ef14ccc3ed98"
+        },
+        {
+          "path": "/outcomes/conversion/development_integrated_release_scores/dr_learner",
+          "kind": "numeric",
+          "original": 0.00015858955053581525,
+          "current": 0.00015858955053934512,
+          "absolute_difference": 3.529864118015369e-15
+        },
+        {
+          "path": "/outcomes/conversion/development_integrated_release_scores/pooled_logistic",
+          "kind": "numeric",
+          "original": 0.00031155397325941827,
+          "current": 0.0003115539732628135,
+          "absolute_difference": 3.3952333132469814e-15
+        },
+        {
+          "path": "/outcomes/conversion/development_integrated_release_scores/t_learner",
+          "kind": "numeric",
+          "original": 0.00036810997278737293,
+          "current": 0.0003681099727903983,
+          "absolute_difference": 3.0253577421035516e-15
+        },
+        {
+          "path": "/outcomes/visit/development_integrated_release_scores/dr_learner",
+          "kind": "numeric",
+          "original": 0.002111528134583055,
+          "current": 0.0021115281345876523,
+          "absolute_difference": 4.597450892207533e-15
+        },
+        {
+          "path": "/outcomes/visit/development_integrated_release_scores/pooled_logistic",
+          "kind": "numeric",
+          "original": 0.0022648243003366877,
+          "current": 0.002264824300340656,
+          "absolute_difference": 3.968179951296946e-15
+        },
+        {
+          "path": "/outcomes/visit/development_integrated_release_scores/t_learner",
+          "kind": "numeric",
+          "original": 0.0027321493511232257,
+          "current": 0.002732149351127842,
+          "absolute_difference": 4.616532850443278e-15
+        }
+      ]
+    }
+  },
+  "retained_file_sha256": {
+    "data_audit.json": "21f08863b87afa882ec089f0ee049558052934f7912ea6342ae77ec6c931a03a",
+    "results.json": "122bbc81b873a28ea3b70dec13135ee5ca13da74fabd554e04d01ab2fc5bc45b",
+    "synthetic_checks.json": "9a918bf638028d511e9570251f0a87328f1c7d529d7ad25d3627b5ea23196f91",
+    "selection_lock.json": "f91c8195c1665c9b21d1bccac9906bf763a6bfc8a4e21fd91cba9803077904df",
+    "verification.json": "3627a3ffb161a07abd7cb23620b697ee5982eeaaec4d333ad05e6e4ca309f30d",
+    "determinism_check.json": "a665a1b07a6eac3a8791040659641509543ff19a1b587ecf5bac92c924d5fcd1",
+    "audit_runtime.json": "337100b113477a18f95e7919ad2017d635196ef241f5b400ced2572c014f579c",
+    "model_runtime.json": "36340f1a14929b291d6579abb19ddbf13de2beb296be276db0bde12ab42bfb6c",
+    "test_receipt.json": "20a87b24538f2928cefa5c39271e7bb5f48e76cfe84d1e8f678e44b4183e8494"
+  },
+  "limits": [
+    "Model and compressed cohort bytes differ from original; logical split hashes agree.",
+    "No cross-platform byte-identical model claim; no comparison of every original row-level prediction.",
+    "Runtime RSS was unavailable and is null, not zero.",
+    "Original Windows repeat receipt and its historical memory observations remain separate.",
+    "Verification is arithmetic and does not establish causal identification or production deployment."
+  ]
+}

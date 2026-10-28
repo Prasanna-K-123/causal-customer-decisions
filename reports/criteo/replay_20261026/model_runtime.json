@@ -1,0 +1,366 @@
+{
+  "stages": [
+    {
+      "stage": "public_tests_before_real_model_evaluation",
+      "wall_seconds": 0.6112554470018949,
+      "process_cpu_seconds": 0.8135817699999999,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_full_propensity",
+      "wall_seconds": 0.06831656400026986,
+      "process_cpu_seconds": 0.12407443099999993,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_propensity_fold_0",
+      "wall_seconds": 0.04841949999536155,
+      "process_cpu_seconds": 0.14885335499999997,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_propensity_fold_1",
+      "wall_seconds": 0.05126758099504514,
+      "process_cpu_seconds": 0.15406863699999995,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_propensity_fold_2",
+      "wall_seconds": 0.053093430993612856,
+      "process_cpu_seconds": 0.16294742900000037,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_pooled_logistic",
+      "wall_seconds": 0.19832180200319272,
+      "process_cpu_seconds": 0.5919590650000002,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_t_learner_arm_0",
+      "wall_seconds": 0.3887664739959291,
+      "process_cpu_seconds": 0.8962067609999993,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_t_learner_arm_1",
+      "wall_seconds": 0.3782073939946713,
+      "process_cpu_seconds": 0.7035347170000001,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_0",
+      "wall_seconds": 0.755540361002204,
+      "process_cpu_seconds": 1.414143738,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_1",
+      "wall_seconds": 0.7732071399950655,
+      "process_cpu_seconds": 1.4351570020000004,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_dr_nuisance_fold_2",
+      "wall_seconds": 1.0181236970020109,
+      "process_cpu_seconds": 1.933681687,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_dr_ranking",
+      "wall_seconds": 0.3476691719988594,
+      "process_cpu_seconds": 0.6681176140000016,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "synthetic_prediction_and_known_truth",
+      "wall_seconds": 0.34686581500136526,
+      "process_cpu_seconds": 0.7777455930000006,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "load_verified_private_cohort",
+      "wall_seconds": 0.8959775429975707,
+      "process_cpu_seconds": 0.9868598419999994,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "criteo_full_propensity",
+      "wall_seconds": 0.7557657560028019,
+      "process_cpu_seconds": 1.7613505469999993,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "criteo_propensity_fold_0",
+      "wall_seconds": 0.5340324749995489,
+      "process_cpu_seconds": 1.4060433649999986,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "criteo_propensity_fold_1",
+      "wall_seconds": 0.5473823709980934,
+      "process_cpu_seconds": 1.4549574829999976,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "criteo_propensity_fold_2",
+      "wall_seconds": 0.47159500799898524,
+      "process_cpu_seconds": 1.2413655380000002,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "development_propensity_prediction",
+      "wall_seconds": 0.04026557299948763,
+      "process_cpu_seconds": 0.11063294099999865,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_pooled_logistic",
+      "wall_seconds": 1.3183820940030273,
+      "process_cpu_seconds": 3.384405935,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_t_learner_arm_0",
+      "wall_seconds": 0.6819059670015122,
+      "process_cpu_seconds": 1.4563300300000002,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_t_learner_arm_1",
+      "wall_seconds": 4.746163408999564,
+      "process_cpu_seconds": 9.121361271000001,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_0",
+      "wall_seconds": 10.483105917002831,
+      "process_cpu_seconds": 18.939333387999994,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_1",
+      "wall_seconds": 9.601536506997945,
+      "process_cpu_seconds": 18.002872835999995,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_dr_nuisance_fold_2",
+      "wall_seconds": 4.783611833001487,
+      "process_cpu_seconds": 9.393259161999993,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_dr_ranking",
+      "wall_seconds": 1.7732508000044618,
+      "process_cpu_seconds": 3.4902494159999975,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_development_prediction_selection",
+      "wall_seconds": 3.599565912001708,
+      "process_cpu_seconds": 5.350950402999999,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_pooled_logistic",
+      "wall_seconds": 2.629647494002711,
+      "process_cpu_seconds": 7.1250673699999965,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_t_learner_arm_0",
+      "wall_seconds": 0.5782120229996508,
+      "process_cpu_seconds": 1.1872958849999975,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_t_learner_arm_1",
+      "wall_seconds": 2.982190515002003,
+      "process_cpu_seconds": 5.810859600000001,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_0",
+      "wall_seconds": 5.160485434003931,
+      "process_cpu_seconds": 9.82784994299999,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_1",
+      "wall_seconds": 4.138883225998143,
+      "process_cpu_seconds": 8.033744067,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_dr_nuisance_fold_2",
+      "wall_seconds": 3.8504490229970543,
+      "process_cpu_seconds": 7.50939151499999,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_dr_ranking",
+      "wall_seconds": 1.5231005750028999,
+      "process_cpu_seconds": 2.9828429220000032,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_development_prediction_selection",
+      "wall_seconds": 5.17850726100005,
+      "process_cpu_seconds": 7.947304234000001,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "write_selection_lock_before_test_evaluation",
+      "wall_seconds": 0.048652662997483276,
+      "process_cpu_seconds": 0.04859016400001792,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "test_propensity_prediction",
+      "wall_seconds": 0.19138084199948935,
+      "process_cpu_seconds": 0.3081277340000099,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_test_prediction",
+      "wall_seconds": 1.4104106930026319,
+      "process_cpu_seconds": 2.8692191439999988,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "visit_locked_test_metrics",
+      "wall_seconds": 16.504017997998744,
+      "process_cpu_seconds": 24.550882656,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_test_prediction",
+      "wall_seconds": 1.5217017730028601,
+      "process_cpu_seconds": 2.9931599370000015,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "conversion_locked_test_metrics",
+      "wall_seconds": 19.31842099599453,
+      "process_cpu_seconds": 27.480765991999988,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    },
+    {
+      "stage": "deterministic_frozen_prediction_repeat",
+      "wall_seconds": 3.889059173001442,
+      "process_cpu_seconds": 7.75899444800001,
+      "observed_peak_rss_bytes": null,
+      "rss_sample_count": 0,
+      "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)"
+    }
+  ],
+  "wall_since_start_seconds": 115.41422742300347,
+  "observed_process_peak_rss_bytes": null,
+  "sampling_interval_seconds": 0.05,
+  "rss_measurement_status": "unavailable_or_partial",
+  "rss_measurement_error": "NoSuchProcess: process PID not found (pid=4)",
+  "measurement_limit": "Sampled RSS; excludes sibling processes; local shared-machine timings",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "logical_cpus": 9,
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "psutil": "7.2.2"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "NUMEXPR_NUM_THREADS": "2"
+    }
+  }
+}

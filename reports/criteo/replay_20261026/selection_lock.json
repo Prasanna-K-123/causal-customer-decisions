@@ -1,0 +1,44 @@
+{
+  "protocol_sha256": "14c70e46426caa94fdf2f3cdc56dd41e13f51f25b00dff17672ed2663bfbf737",
+  "config_sha256": "239cb07228395a18d48eccc84eb6120f3f660313aaaf5eea8d080910653c1e62",
+  "source_sha256": "2716e1bf0fd157a93b5bf86924d9088419dfbac2022c6cd90030220634f616dc",
+  "cohort_file_sha256": "8c4e4d258f4968537fa91fad70e60076b471bce0b514311dbb182dc447a89947",
+  "split_hashes": {
+    "train": "e1069ac6e7ec893a09b51fa6f99c4687126dd2cc1ec0b636386068c4aedeff62",
+    "development": "04f9a067e252b5d9b81467bb331deb361e453c922792944e64d1a4a018d31282",
+    "test": "3d544b1ec21515ca8492601ab6d8b5c9acd823d83e40e6475a258db875b73385"
+  },
+  "frozen_model_file_sha256": "544014c023ccab515b4181f0503eaf7daf9297e947647b294e8470288c3cf05d",
+  "outcomes": {
+    "visit": {
+      "selected": "t_learner",
+      "development_integrated_release_scores": {
+        "pooled_logistic": 0.002264824300340656,
+        "t_learner": 0.002732149351127842,
+        "dr_learner": 0.0021115281345876523
+      }
+    },
+    "conversion": {
+      "selected": "t_learner",
+      "development_integrated_release_scores": {
+        "pooled_logistic": 0.0003115539732628135,
+        "t_learner": 0.0003681099727903983,
+        "dr_learner": 0.00015858955053934512
+      }
+    }
+  },
+  "created_utc": "2026-10-26T15:11:23.615401+00:00",
+  "implementation_sha256": {
+    "src/criteo_release/__init__.py": "f66d9c9671c676decba30f06a8d1533729b38fec6954e8398a3cf84aad87e13d",
+    "src/criteo_release/core.py": "22f10c3f9d0e9eb464eba024febf5914080aa7288d2b0f1b9206b69974c57413",
+    "src/criteo_release/data.py": "d6e781831e38205b4f4f7206975ee422fa90a5c4bcf44a540e10034679b7b5b8",
+    "src/criteo_release/evaluation.py": "8fb5e9687c2a9a90e6db95c46043dc697845f8168e14624cbc61e27519ff5e42",
+    "src/criteo_release/experiment.py": "e180a3e036eaf137d98bb42b440badbfa11812f6513fc9ed8f969de18a0d8ba4",
+    "src/criteo_release/models.py": "5b167b446da6c85a3941047f7da17afa31ae49b2e0949a79fbf9663aedad0778",
+    "src/criteo_release/reporting.py": "78a5d1f7faef71ec27b67ce48deea3839b4343be8f349f1851829ab29538fc87",
+    "src/criteo_release/runtime.py": "9fb7de7858fd044d47f7c22f3176ba1c3e43abb5afa69e02a55f1e32a39b0693",
+    "src/criteo_release/synthetic.py": "da5ca6478e5cd1867dc9834a939788c8db2170089e95b72c009a332bab885292",
+    "src/criteo_release/verify_outputs.py": "f1f2d7c4a1ce5dcc245b2d7ab0dc3e3d91b81485be75bfa8d373ef14ccc3ed98"
+  },
+  "final_touch_rule": "No model selection, tuning, scenario changes or refit after this lock."
+}

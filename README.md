@@ -31,13 +31,13 @@ The contribution is the complete evidence chain from randomized observations to 
 
 The separate [Criteo extension](reports/criteo/TECHNICAL_REPORT.md) audits **13,979,592 rows** and fits three fixed rankings on a **873,520-row feature-group hash cohort**. Stronger factual prediction did not establish better primary held-out ranking: the selected two-model learner minus pooled logistic has integrated release-response difference **−0.000195**, 95% CI **[−0.001062, +0.000671]**.
 
-Outcome-dependent source sampling prevents an unqualified original-campaign causal interpretation. A declared retention-ratio sensitivity grid changes the reconstructed average contrast and allocation. The extension includes full audit receipts, local time/memory measurements, known-truth checks and two complete matching fixed-model runs. It preserves the Hillstrom scientific files and finding.
+Outcome-dependent source sampling prevents an unqualified original-campaign causal interpretation. A declared retention-ratio sensitivity grid changes the reconstructed average contrast and allocation. The original Windows release includes full audit receipts, local time/memory measurements, known-truth checks and two complete matching fixed-model runs. A separate [26 October Linux replay](docs/criteo/PORTABLE_REPLAY_20261026.md) reacquired and audited the full source, refit the fixed models and reproduced 2,622 scientific numeric fields within `1e-10`; model/container hashes differ and RSS was unavailable. The original scientific files and findings remain the reference evidence.
 
 [Explore the extension](https://prasanna-k-123.github.io/causal-customer-decisions/criteo/) · [Protocol v1.0](docs/criteo/PROTOCOL_V1.md) · [Data and identification](docs/criteo/DATA_AND_IDENTIFICATION.md) · [Reproduce](docs/criteo/REPRODUCE.md) · [Verification](reports/criteo/verification.json)
 
 ## Automated public checks
 
-The automated checks run on public files without private data or credentials. Extension checks include small deterministic synthetic model fits; full raw-source fitting remains a separate reproduction step. The 22 original tests cover research checks plus input-contract, numerical-boundary and row-order invariance checks. The separate Criteo extension adds 22 tests, for 44 public checks in total. Raw-source model reproduction is separate.
+The automated checks run on public files without private data or credentials. Extension checks include small deterministic synthetic model fits; full raw-source fitting remains a separate reproduction step. The 22 original tests cover research checks plus input-contract, numerical-boundary and row-order invariance checks. The Criteo extension adds 22 tests and process-memory instrumentation adds three, for 47 scientific and instrumentation checks. Seven release-identity checks bring the current public suite to 54. Raw-source model reproduction is separate.
 
 The [21 October validation revision](docs/INPUT_CONTRACT_REVISION_20261021.md) rejects malformed treatment/action labels before integer conversion and requires finite scenario inputs. Independent complete reruns of the original and revised code reproduce all five published aggregate outputs byte for byte in the pinned environment.
 
@@ -62,6 +62,6 @@ The data comes from Kevin Hillstrom's MineThatData experiment. Campaign labels r
 
 Project: Prasanna K · Economics student at Madras School of Economics, 2026–28.
 
-## 26 October 2026 verification
+## Hillstrom Windows verification — 26 October 2026
 
 A fresh download and complete fixed-model rerun on Windows reproduce the scientific values in all five checked aggregate outputs within absolute/relative tolerance `1e-10`. Platform text bytes and the environment field differ; no byte-identical cross-platform claim is made. See [the dated verification guide](docs/VERIFICATION_20261026.md). The reported original experiment remains the reference study.

@@ -41,11 +41,11 @@ Copy the verified cohort and audit to a separate private run directory, preservi
 python -m criteo_release.verify_outputs --scratch /absolute/private/criteo-run --repeat /absolute/private/criteo-repeat
 ```
 
-This compares every scientific numeric field in the real and synthetic results, plus model artifact hashes. Selection-lock timestamps and runtime measurements naturally differ. The published verification records two complete fixed-model runs using the same verified cohort; source ingestion was run once.
+This compares every scientific numeric field in the real and synthetic results, plus model artifact hashes. Selection-lock timestamps and runtime measurements naturally differ. The original published verification records two complete Windows fixed-model runs using the same verified cohort; source ingestion was run once for those runs. The separately retained [Linux replay](PORTABLE_REPLAY_20261026.md) reacquired and audited the source and refit the fixed models. Its scientific values agree numerically; its model and compressed-cohort bytes are not identical to the Windows artifacts.
 
 ## What is checked
 
-- All 44 tests: 22 existing Hillstrom tests and 22 extension tests.
+- All 54 current tests: 22 Hillstrom tests, 22 extension tests, three process-memory instrumentation tests and seven release-identity checks. The Linux full-replay receipt correctly records 47 tests; the original Windows receipt correctly records the 44 tests available at that time.
 - Frozen protocol/config checksums and compressed source hash/size.
 - Complete schema, finite values, binary labels, feature-group overlap and cohort collision checks.
 - Separate analytical oracles for augmentation, clustered uncertainty and selection inversion.
@@ -57,10 +57,20 @@ The first preanalysis extension-only test attempt failed because the operating-s
 
 ## Runtime interpretation
 
-See [audit timing](../../reports/criteo/audit_runtime.json), [model timing](../../reports/criteo/model_runtime.json) and [figure timing](../../reports/criteo/reporting_runtime.json). Each contains wall seconds, process CPU seconds and sampled process RSS. The 50 ms monitor can miss shorter peaks; it excludes sibling processes. The recorded machine had eight logical CPUs, with model threads capped at two. These are local shared-machine measurements, not hardware-normalized speed comparisons or production latency guarantees.
+See the original Windows [audit timing](../../reports/criteo/audit_runtime.json), [model timing](../../reports/criteo/model_runtime.json) and [figure timing](../../reports/criteo/reporting_runtime.json). Each contains wall seconds, process CPU seconds and sampled process RSS. The 50 ms monitor can miss shorter peaks; it excludes sibling processes. That recorded machine had eight logical CPUs, with model threads capped at two. These are historical local shared-machine measurements, not hardware-normalized speed comparisons or production latency guarantees. The Linux replay records actual wall/CPU timings but null RSS; it does not reverify the original memory bound.
 
 The 1/16 cohort was frozen to keep fitting below one million rows and observed process memory below a gigabyte while other local work ran. The result should be described as a 14M-row audit with an 874k-row analysis, never as full-14M model training. Exact repeat results on this environment do not guarantee bitwise portability across Python/library versions, operating systems or hardware.
 
 ## Information boundaries after release
 
 The test set is now public aggregate evidence and cannot support new confirmatory tuning. Any new encoding, larger cohort, learner, grid, selection rule or uncertainty procedure needs a new versioned protocol and a fresh evaluation design. Fixes to analysis defects require a documented amendment and complete rerun. The v1.0 files and negative results must remain available.
+
+## Restricted execution environments
+
+If the operating system does not expose process RSS, the pipeline continues scientific computation and wall/CPU timing. Its runtime receipt records null RSS, an explicit unavailable/partial status and the measurement error. Missing measurements are never reported as zero memory or as meeting the historical memory bound. This affects instrumentation only; the frozen scientific protocol and configuration are unchanged.
+
+## Publishing a reviewed release
+
+The release workflow runs only on explicit manual dispatch from `main`, with a full reviewed commit SHA and an existing version tag already pointing to that same commit. It checks dispatch, checkout, main and tag identity before and after verification. The verification job has read-only contents access; the separate publication job alone has write access. It never intentionally creates or moves tags, overwrites existing release notes, uploads datasets/models or publishes on an ordinary push.
+
+Release verification runs the public tests and deterministic aggregate rendering. Full raw-source fitting remains a separate, dated review gate; this workflow does not claim a new full-data run. An external tag writer can still race a ref check: workflow concurrency is not platform-enforced tag immutability. Keep tag-writing access controlled and inspect the final release target. A changed main, tag or existing release requires a new review rather than bypassing the guard.
